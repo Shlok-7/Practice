@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+         http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+    <!-- Define Movie bean -->
+    <bean id="movieBean" class="Microsoft.Springfirst.Movie">
+        <property name="title" value="Avengers End Game"/>
+    </bean>
+ 
+    <!-- Define MovieService bean with Setter Injection -->
+    <bean id="movieService" class="Microsoft.Springfirst.MovieService">
+          <constructor-arg ref="movieBean"/>
+       <!--   <property name="movie" ref="movieBean"/>-->
+    </bean>
+ 
+</beans>
